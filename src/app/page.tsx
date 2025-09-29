@@ -5,7 +5,7 @@ export default function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
         <h1>Gemstone Genomics</h1>
-        <p>coming soon</p>
+        <p>coming soon - watch this space</p>
       </main>
     </div>
   );
