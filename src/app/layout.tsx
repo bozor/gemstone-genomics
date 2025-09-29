@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gemstone Genomics",
+  title: `${process.env.NEXT_PUBLIC_PREVIEW_TITLE_FLAG}Gemstone Genomics`,
   description: "Gemstone Genomics",
 };
 
