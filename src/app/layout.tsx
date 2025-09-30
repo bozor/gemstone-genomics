@@ -14,8 +14,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = `${
+  process.env.NEXT_PUBLIC_VERCEL_ENV === "preview" ? `[Preview] - ` : ``
+}Gemstone Genomics`;
+
 export const metadata: Metadata = {
-  title: `${process.env.NEXT_PUBLIC_PREVIEW_TITLE_FLAG}Gemstone Genomics`,
+  title: title,
   description: "Gemstone Genomics",
 };
 
@@ -27,6 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {process.env.NEXT_PUBLIC_VERCEL_ENV === "preview" && (
+          <div className="preview">Preview</div>
+        )}
         {children}
         <SpeedInsights />
       </body>
