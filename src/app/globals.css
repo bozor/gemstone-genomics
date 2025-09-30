@@ -40,3 +40,17 @@ a {
     color-scheme: dark;
   }
 }
+
+.preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 162, 255, 0.5);
+  color: #171717;
+}
