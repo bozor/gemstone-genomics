@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
+import Nav from "@/components/Nav";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -35,6 +37,7 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_VERCEL_ENV === "preview" && (
           <div className="preview">Preview</div>
         )}
+        <Nav />
         {children}
         <SpeedInsights />
         <Analytics />
