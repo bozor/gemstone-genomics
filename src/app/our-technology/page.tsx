@@ -1,11 +1,9 @@
 import { NextPage } from "next";
 
+import PageOurTechnology from "@/components/PageOurTechnology";
+
 const OurTechnology: NextPage = () => {
-  return (
-    <main>
-      <h1>Our Technology</h1>
-    </main>
-  );
+  return <PageOurTechnology />;
 };
 
 export default OurTechnology;

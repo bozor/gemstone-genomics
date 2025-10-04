@@ -1,11 +1,9 @@
 import { NextPage } from "next";
 
+import PageWhatIs from "@/components/PageWhatIs";
+
 const WhatIs: NextPage = () => {
-  return (
-    <main>
-      <h1>What is Gemstone Genomics</h1>
-    </main>
-  );
+  return <PageWhatIs />;
 };
 
 export default WhatIs;

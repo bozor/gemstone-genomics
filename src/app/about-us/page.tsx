@@ -1,11 +1,9 @@
 import { NextPage } from "next";
 
+import PageAboutUs from "@/components/PageAboutUs";
+
 const About: NextPage = () => {
-  return (
-    <main>
-      <h1>About Us</h1>
-    </main>
-  );
+  return <PageAboutUs />;
 };
 
 export default About;

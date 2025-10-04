@@ -1,11 +1,9 @@
 import { NextPage } from "next";
 
+import PageContactUs from "@/components/PageContactUs";
+
 const ContactUs: NextPage = () => {
-  return (
-    <main>
-      <h1>Contact Us</h1>
-    </main>
-  );
+  return <PageContactUs />;
 };
 
 export default ContactUs;
