@@ -34,7 +34,6 @@ export function useBrowserNativeTransitions() {
       })
 
       const pendingStartViewTransition = new Promise<void>((resolve) => {
-        // @ts-ignore
         document.startViewTransition(() => {
           resolve()
           return pendingViewTransition
