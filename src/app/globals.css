@@ -53,4 +53,32 @@ a {
   text-align: center;
   background-color: rgba(0, 162, 255, 0.5);
   color: #171717;
+  z-index: 10;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+::view-transition-group(root) {
+  z-index: auto;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+  will-change: transform, opacity, clip-path;
+  z-index: 1;
+} 
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+h1 {
+  padding-top: 50px;
 }
