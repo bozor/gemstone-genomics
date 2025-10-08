@@ -18,9 +18,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const title = `${
-  process.env.NEXT_PUBLIC_VERCEL_ENV === "preview" ? `[Preview] - ` : ``
-}Gemstone Genomics`;
+const title = {
+  template: `${
+    process.env.NEXT_PUBLIC_VERCEL_ENV === "preview" ? `[Preview] - ` : ``
+  }Gemstone Genomics : %s`,
+  default: "Gemstone Genomics",
+};
 
 export const metadata: Metadata = {
   title: title,
