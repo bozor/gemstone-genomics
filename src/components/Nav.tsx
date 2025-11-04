@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { SyntheticEvent } from "react";
+import { useState } from "react";
 
 import { useTransitionRouter } from "@/vendor/next-view-transitions";
 
 import s from "./Nav.module.css";
+import Hamburger from "./Hamburger";
+import clsx from "clsx";
 
 const links = [
   { name: "Home", href: "/" },
@@ -17,6 +19,7 @@ const links = [
 
 const Nav = () => {
   const router = useTransitionRouter();
+  const [showNav, setShowNav] = useState(false);
 
   const slideInOut = () => {
     document.documentElement.animate(
@@ -56,28 +59,29 @@ const Nav = () => {
     );
   };
 
-  const handleOnClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    router.push(e.currentTarget.pathname, {
+  const handleOnClick = (pathname: string) => {
+    setShowNav(false);
+    router.push(pathname, {
       onTransitionReady: slideInOut,
     });
   };
 
   return (
     <nav className={s.nav}>
-      <div className={s.logo}>
+      <div className={s.logo} onClick={() => handleOnClick("/")}>
         <Image
           src={"images/genomics-symbol-logo.svg"}
           fill
           alt="Gemstone Genomics"
         />
       </div>
-      <div className={s.links}>
+      <Hamburger showNav={showNav} setShowNav={setShowNav} />
+      <div className={clsx(s.links, { [s.visible]: showNav })}>
         {links.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            onClick={(e) => handleOnClick(e)}
+            onClick={(e) => handleOnClick(e.currentTarget.pathname)}
           >
             {link.name}
           </Link>
