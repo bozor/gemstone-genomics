@@ -7,6 +7,7 @@ import { ViewTransitions } from "@/vendor/next-view-transitions";
 import Nav from "@/components/Nav";
 
 import "./globals.css";
+import "@/styles/reset.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {process.env.NEXT_PUBLIC_VERCEL_ENV === "preview" && (
           <div className="preview">Preview</div>
