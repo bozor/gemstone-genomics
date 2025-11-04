@@ -2,12 +2,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import clsx from "clsx";
+import { useMediaQuery } from "usehooks-ts";
 
 import { useTransitionRouter } from "@/vendor/next-view-transitions";
 
-import s from "./Nav.module.css";
 import Hamburger from "./Hamburger";
-import clsx from "clsx";
+
+import s from "./Nav.module.css";
 
 const links = [
   { name: "Home", href: "/" },
@@ -20,6 +22,7 @@ const links = [
 const Nav = () => {
   const router = useTransitionRouter();
   const [showNav, setShowNav] = useState(false);
+  const notMobile = useMediaQuery("(min-width: 700px)");
 
   const slideInOut = () => {
     document.documentElement.animate(
@@ -61,9 +64,14 @@ const Nav = () => {
 
   const handleOnClick = (pathname: string) => {
     setShowNav(false);
-    router.push(pathname, {
-      onTransitionReady: slideInOut,
-    });
+    setTimeout(
+      () => {
+        router.push(pathname, {
+          onTransitionReady: notMobile ? slideInOut : () => {},
+        });
+      },
+      notMobile ? 0 : 150
+    );
   };
 
   return (
