@@ -1,0 +1,16 @@
+.hamburger {
+  position: absolute;
+  right: 1rem;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+
+  z-index: 1;
+
+  @media (min-width: 700px) {
+    display: none;
+  }
+}
