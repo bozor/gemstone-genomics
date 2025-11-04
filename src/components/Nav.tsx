@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { SyntheticEvent } from "react";
 
 import { useTransitionRouter } from "@/vendor/next-view-transitions";
@@ -64,6 +65,13 @@ const Nav = () => {
 
   return (
     <nav className={s.nav}>
+      <div className={s.logo}>
+        <Image
+          src={"images/genomics-symbol-logo.svg"}
+          fill
+          alt="Gemstone Genomics"
+        />
+      </div>
       <div className={s.links}>
         {links.map((link) => (
           <Link
