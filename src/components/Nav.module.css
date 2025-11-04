@@ -8,6 +8,10 @@
   align-items: center;
   justify-content: space-between;
   z-index: 1;
+
+  @media (min-width: 700px) {
+    background: color-mix(in srgb, var(--background) 75%, transparent);
+  }
 }
 
 .overlay {
@@ -38,7 +42,7 @@
   position: relative;
   width: 50px;
   height: 55px;
-  margin: 1rem;
+  margin: 1rem 0 1rem 1rem;
   cursor: pointer;
 
   img {
@@ -60,6 +64,7 @@
   background: var(--foreground);
   padding: 80px 1rem 0;
   z-index: 2;
+  max-width: 190px;
 
   @media (min-width: 700px) {
     position: relative;
@@ -71,6 +76,7 @@
     text-align: left;
     padding: 0;
     height: auto;
+    max-width: none;
   }
 
   &.visible {
