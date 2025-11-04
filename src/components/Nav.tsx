@@ -1,9 +1,13 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { SyntheticEvent } from "react";
+import { useState } from "react";
+import clsx from "clsx";
+import { useMediaQuery } from "usehooks-ts";
 
 import { useTransitionRouter } from "@/vendor/next-view-transitions";
+
+import Hamburger from "./Hamburger";
 
 import s from "./Nav.module.css";
 
@@ -17,6 +21,8 @@ const links = [
 
 const Nav = () => {
   const router = useTransitionRouter();
+  const [showNav, setShowNav] = useState(false);
+  const notMobile = useMediaQuery("(min-width: 700px)");
 
   const slideInOut = () => {
     document.documentElement.animate(
@@ -56,33 +62,43 @@ const Nav = () => {
     );
   };
 
-  const handleOnClick = (e: SyntheticEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    router.push(e.currentTarget.pathname, {
-      onTransitionReady: slideInOut,
-    });
+  const handleOnClick = (pathname: string) => {
+    setShowNav(false);
+    setTimeout(
+      () => {
+        router.push(pathname, {
+          onTransitionReady: notMobile ? slideInOut : () => {},
+        });
+      },
+      notMobile ? 0 : 150
+    );
   };
 
   return (
     <nav className={s.nav}>
-      <div className={s.logo}>
+      <div className={s.logo} onClick={() => handleOnClick("/")}>
         <Image
           src={"images/genomics-symbol-logo.svg"}
           fill
           alt="Gemstone Genomics"
         />
       </div>
-      <div className={s.links}>
+      <Hamburger showNav={showNav} setShowNav={setShowNav} />
+      <div className={clsx(s.links, { [s.visible]: showNav })}>
         {links.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            onClick={(e) => handleOnClick(e)}
+            onClick={(e) => handleOnClick(e.currentTarget.pathname)}
           >
             {link.name}
           </Link>
         ))}
       </div>
+      <div
+        className={clsx(s.overlay, { [s.linksVisible]: showNav })}
+        onClick={() => setShowNav(false)}
+      ></div>
     </nav>
   );
 };
