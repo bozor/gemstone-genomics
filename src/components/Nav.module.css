@@ -10,11 +10,36 @@
   z-index: 1;
 }
 
+.overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  content: "";
+  background: color-mix(in srgb, var(--foreground) 75%, transparent);
+  transition: 150ms ease-in-out opacity;
+  height: 100svh;
+  transform: translateX(100%);
+  z-index: 1;
+
+  @media (min-width: 700px) {
+    display: none;
+  }
+
+  &.linksVisible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .logo {
   position: relative;
   width: 50px;
   height: 55px;
   margin: 1rem;
+  cursor: pointer;
 
   img {
     height: 100%;
@@ -34,6 +59,7 @@
   text-align: right;
   background: var(--foreground);
   padding: 80px 1rem 0;
+  z-index: 2;
 
   @media (min-width: 700px) {
     position: relative;

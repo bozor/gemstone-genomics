@@ -87,6 +87,10 @@ const Nav = () => {
           </Link>
         ))}
       </div>
+      <div
+        className={clsx(s.overlay, { [s.linksVisible]: showNav })}
+        onClick={() => setShowNav(false)}
+      ></div>
     </nav>
   );
 };
