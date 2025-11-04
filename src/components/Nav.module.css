@@ -53,5 +53,9 @@
 
   a {
     color: var(--mobile-nav-links);
+
+    @media (min-width: 700px) {
+      color: var(--nav-links);
+    }
   }
 }
