@@ -1,10 +1,12 @@
+import Main from "./Main";
+
 import s from "./PageAboutUs.module.css";
 
 const PageAboutUs = () => {
   return (
-    <main className={s.wrap}>
+    <Main className={s.wrap}>
       <h1>About Us</h1>
-    </main>
+    </Main>
   );
 };
 

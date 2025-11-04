@@ -1,10 +1,12 @@
+import Main from "./Main";
+
 import s from "./PageContactUs.module.css";
 
 const PageContactUs = () => {
   return (
-    <main className={s.wrap}>
+    <Main className={s.wrap}>
       <h1>Contact Us</h1>
-    </main>
+    </Main>
   );
 };
 
