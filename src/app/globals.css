@@ -1,11 +1,16 @@
 :root {
   --background: #fff;
-  --foreground: #171717;
+  --foreground: #272a2c;
+  --page-background: linear-gradient(135deg, #e1e4e6 10%, #f2f2f2 100%);
 
-  --nav-links: #171717;
+  --header: #4d585c;
+  --site-text: #231f20;
+  --nav-links: #272a2c;
   --mobile-nav-links: #fff;
+  --footer-text: #fff;
+  --people-border: #272a2c25;
 
-  --font-size-1: clamp(3rem, 2.3182rem + 2.7273vw, 4.5rem);
+  --font-size-1: clamp(2.5rem, 2.1182rem + 2.7273vw, 4.75rem);
   --font-size-2: clamp(2.25rem, 1.7386rem + 2.0455vw, 3.375rem);
   --font-size-3: clamp(1.875rem, 1.4489rem + 1.7045vw, 2.8125rem);
   --font-size-4: clamp(1.5rem, 1.1591rem + 1.3636vw, 2.25rem);
@@ -28,7 +33,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  color: var(--foreground);
+  color: var(--site-text);
   background: var(--background);
   font-family: var(--font-manrope);
   -webkit-font-smoothing: antialiased;
@@ -97,6 +102,22 @@ h2,
   font-size: var(--font-size-2);
 }
 
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &:after {
+    display: inline-block;
+    content: "";
+    background: var(--header);
+    height: 1px;
+    flex: 1;
+    margin-top: 10px;
+    opacity: 0.25;
+  }
+}
+
 h3,
 .fs-h3 {
   font-size: var(--font-size-3);
@@ -117,6 +138,15 @@ h6,
   font-size: var(--font-size-6);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--header);
+}
+
 p,
 .fs-p {
   font-size: var(--font-size-lg);
@@ -124,6 +154,6 @@ p,
   text-wrap: pretty;
 
   @media (min-width: 700px) {
-    line-height: 1.7rem;
+    line-height: 1.9rem;
   }
 }

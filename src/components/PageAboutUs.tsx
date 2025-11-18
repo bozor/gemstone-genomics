@@ -18,11 +18,11 @@ const PageAboutUs = () => {
           <h3 className="fs-h4">Anatoly Grudinin</h3>
           <Paragraphs className={s.content}>
             <p>
-              Managing Director and a Principal Photonics Scientist. Prior to
-              founding Gemstone Genomics, Anatoly was the CEO of Fainium, a
-              fibre laser company focused on commercialising ultrafast fibre
-              lasers. In 2016, the company was acquired and is now part of
-              Hamamatsu.
+              <strong>Managing Director</strong> and a{" "}
+              <strong>Principal Photonics Scientist</strong>. Prior to founding
+              Gemstone Genomics, Anatoly was the CEO of Fainium, a fibre laser
+              company focused on commercialising ultrafast fibre lasers. In
+              2016, the company was acquired and is now part of Hamamatsu.
             </p>
             <p>
               He published over 200 scientific papers in peer-reviewed journals
@@ -30,16 +30,17 @@ const PageAboutUs = () => {
             </p>
           </Paragraphs>
         </div>
+        <span className={s.divider}></span>
         <div className={s.person}>
           <h3 className="fs-h4">Rajeev Ratan</h3>
           <Paragraphs className={s.content}>
             <p>
-              Principal Data Scientist with a focus on Large Language Models
-              (LLMs), Natural Language Processing (NLP), and predictive
-              analytics. With nearly a decade of experience in AI and data
-              science, he has worked across education, computer vision, and
-              telecommunications, including as a Senior Computer Vision Engineer
-              at a U.S.-based AI startup.
+              <strong>Principal Photonics Scientist</strong> with a focus on
+              Large Language Models (LLMs), Natural Language Processing (NLP),
+              and predictive analytics. With nearly a decade of experience in AI
+              and data science, he has worked across education, computer vision,
+              and telecommunications, including as a Senior Computer Vision
+              Engineer at a U.S.-based AI startup.
             </p>
             <p>
               Passionate about AI education, Rajeev has published eight data

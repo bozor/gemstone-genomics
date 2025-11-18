@@ -1,0 +1,13 @@
+.wrap {
+  background: var(--foreground);
+  color: var(--footer-text);
+  padding: 1.5rem;
+
+  @media (min-width: 700px) {
+    padding: 1.5rem 3.5rem;
+  }
+
+  p {
+    opacity: 0.5;
+  }
+}

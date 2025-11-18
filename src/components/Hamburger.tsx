@@ -7,7 +7,7 @@ const line1Animate = (showNav: boolean) => {
     x2: 28,
     opacity: 1,
     rotate: showNav ? "45deg" : 0,
-    stroke: showNav ? "#fff" : "#101010",
+    stroke: showNav ? "#fff" : "#272a2c",
   };
 };
 
@@ -16,7 +16,7 @@ const line2Animate = (showNav: boolean) => {
     x2: showNav ? 28 : 16,
     opacity: 1,
     rotate: showNav ? "-45deg" : 0,
-    stroke: showNav ? "#fff" : "#101010",
+    stroke: showNav ? "#fff" : "#272a2c",
   };
 };
 
@@ -39,7 +39,7 @@ const Hamburger = ({ showNav, setShowNav }: HamburgerProps) => {
           y1="9"
           x2="29"
           y2="9"
-          stroke="#101010"
+          stroke="#272a2c"
           strokeWidth="3"
           initial={{
             x2: 0,
@@ -60,7 +60,7 @@ const Hamburger = ({ showNav, setShowNav }: HamburgerProps) => {
           y1="18"
           x2="16"
           y2="18"
-          stroke="#101010"
+          stroke="#272a2c"
           strokeWidth="3"
           initial={{
             x2: 0,
