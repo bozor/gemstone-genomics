@@ -64,14 +64,7 @@ const Nav = () => {
 
   const handleOnClick = (pathname: string) => {
     setShowNav(false);
-    setTimeout(
-      () => {
-        router.push(pathname, {
-          onTransitionReady: notMobile ? slideInOut : () => {},
-        });
-      },
-      notMobile ? 0 : 150
-    );
+    setTimeout(() => router.push(pathname), notMobile ? 0 : 150);
   };
 
   return (
