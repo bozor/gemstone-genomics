@@ -14,9 +14,9 @@ import s from "./Nav.module.css";
 const links = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
-  { name: "What is Gemstone Genomics", href: "/what-is-gemstone-genomics" },
+  // { name: "What is Gemstone Genomics", href: "/what-is-gemstone-genomics" },
   { name: "Our Technology", href: "/our-technology" },
-  { name: "Contact Us", href: "/contact-us" },
+  // { name: "Contact Us", href: "/contact-us" },
 ];
 
 const Nav = () => {
@@ -87,6 +87,7 @@ const Nav = () => {
             {link.name}
           </Link>
         ))}
+        <a href="mailto:info@gemstonegenomics.com">Contact Us</a>
       </div>
       <div
         className={clsx(s.overlay, { [s.linksVisible]: showNav })}
