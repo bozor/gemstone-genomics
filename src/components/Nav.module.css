@@ -44,6 +44,7 @@
   height: 44px;
   margin: 1rem 0 1rem 1.5rem;
   cursor: pointer;
+  transition: opacity 200ms ease-in-out;
 
   @media (min-width: 700px) {
     width: 50px;
@@ -53,6 +54,10 @@
 
   img {
     height: 100%;
+  }
+
+  &:hover {
+    opacity: 0.5;
   }
 }
 
@@ -91,9 +96,14 @@
 
   a {
     color: var(--mobile-nav-links);
+    transition: opacity 200ms ease-in-out;
 
     @media (min-width: 700px) {
       color: var(--nav-links);
+    }
+
+    &:hover {
+      opacity: 0.5;
     }
   }
 }
