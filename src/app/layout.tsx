@@ -16,7 +16,7 @@ const manrope = Manrope({
 
 const spaceMono = Space_Mono({
   variable: "--font-space-mono",
-  weight: "700",
+  weight: "400",
   subsets: ["latin"],
 });
 

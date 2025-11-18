@@ -4,6 +4,20 @@
 
   --nav-links: #171717;
   --mobile-nav-links: #fff;
+
+  --font-size-1: clamp(3rem, 2.3182rem + 2.7273vw, 4.5rem);
+  --font-size-2: clamp(2.25rem, 1.7386rem + 2.0455vw, 3.375rem);
+  --font-size-3: clamp(1.875rem, 1.4489rem + 1.7045vw, 2.8125rem);
+  --font-size-4: clamp(1.5rem, 1.1591rem + 1.3636vw, 2.25rem);
+  --font-size-5: clamp(1.25rem, 0.9659rem + 1.1364vw, 1.875rem);
+  --font-size-6: clamp(1.125rem, 0.8693rem + 1.0227vw, 1.6875rem);
+  --font-size-lg: clamp(0.8333rem, 0.6439rem + 0.7576vw, 1.25rem);
+  --font-size-base: clamp(0.6667rem, 0.5152rem + 0.6061vw, 1rem);
+  --font-size-sm: clamp(0.5833rem, 0.4508rem + 0.5303vw, 0.875rem);
+  --font-size-xs: clamp(0.5rem, 0.3864rem + 0.4545vw, 0.75rem);
+}
+c html {
+  height: 100dvh;
 }
 
 html,
@@ -12,6 +26,8 @@ body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-manrope);
@@ -66,4 +82,48 @@ a {
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
+}
+
+h1,
+.fs-h1 {
+  font-size: var(--font-size-1);
+  font-family: var(--font-space-mono);
+  line-height: clamp(3rem, 2.3182rem + 2.7273vw, 4.5rem);
+  padding: 1rem 0 0.75rem;
+}
+
+h2,
+.fs-h2 {
+  font-size: var(--font-size-2);
+}
+
+h3,
+.fs-h3 {
+  font-size: var(--font-size-3);
+}
+
+h4,
+.fs-h4 {
+  font-size: var(--font-size-4);
+}
+
+h5,
+.fs-h5 {
+  font-size: var(--font-size-5);
+}
+
+h6,
+.fs-h6 {
+  font-size: var(--font-size-6);
+}
+
+p,
+.fs-p {
+  font-size: var(--font-size-lg);
+  line-height: 1.45rem;
+  text-wrap: pretty;
+
+  @media (min-width: 700px) {
+    line-height: 1.7rem;
+  }
 }
