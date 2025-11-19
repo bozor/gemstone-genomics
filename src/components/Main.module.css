@@ -1,11 +1,9 @@
 .wrap {
   position: relative;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   flex-grow: 1;
-  max-width: 100%;
   padding: 90px 1.5rem 1.5rem;
 
   @media (min-width: 700px) {
@@ -45,4 +43,9 @@
       height: 450px;
     }
   }
+}
+
+.inner {
+  max-width: 1300px;
+  align-self: center;
 }
