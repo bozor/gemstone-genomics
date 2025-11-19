@@ -39,6 +39,17 @@ body {
   font-family: var(--font-manrope);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  &:after {
+    content: "";
+    position: fixed;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    z-index: -1;
+    background-color: var(--foreground);
+  }
 }
 
 a {
