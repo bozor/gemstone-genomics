@@ -15,7 +15,7 @@ const Main = ({ children, className, showBg = true }: MainProps) => {
   return (
     <>
       <main className={clsx(s.wrap, className)}>
-        {children}
+        <div className={s.inner}>{children}</div>
         {showBg ? <span className={s.logoBg}></span> : null}
       </main>
       <Footer />

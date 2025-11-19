@@ -68,31 +68,33 @@ const Nav = () => {
   };
 
   return (
-    <nav className={s.nav}>
-      <div className={s.logo} onClick={() => handleOnClick("/")}>
-        <Image
-          src={"images/genomics-symbol-logo.svg"}
-          fill
-          alt="Gemstone Genomics"
-        />
+    <nav className={s.wrap}>
+      <div className={s.inner}>
+        <div className={s.logo} onClick={() => handleOnClick("/")}>
+          <Image
+            src={"images/genomics-symbol-logo.svg"}
+            fill
+            alt="Gemstone Genomics"
+          />
+        </div>
+        <Hamburger showNav={showNav} setShowNav={setShowNav} />
+        <div className={clsx(s.links, { [s.visible]: showNav })}>
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleOnClick(e.currentTarget.pathname)}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <a href="mailto:info@gemstonegenomics.com">Contact Us</a>
+        </div>
+        <div
+          className={clsx(s.overlay, { [s.linksVisible]: showNav })}
+          onClick={() => setShowNav(false)}
+        ></div>
       </div>
-      <Hamburger showNav={showNav} setShowNav={setShowNav} />
-      <div className={clsx(s.links, { [s.visible]: showNav })}>
-        {links.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            onClick={(e) => handleOnClick(e.currentTarget.pathname)}
-          >
-            {link.name}
-          </Link>
-        ))}
-        <a href="mailto:info@gemstonegenomics.com">Contact Us</a>
-      </div>
-      <div
-        className={clsx(s.overlay, { [s.linksVisible]: showNav })}
-        onClick={() => setShowNav(false)}
-      ></div>
     </nav>
   );
 };
