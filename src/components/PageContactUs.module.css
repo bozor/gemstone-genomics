@@ -1,3 +1,23 @@
 .wrap {
   background-color: #d0d0d0;
+
+  p {
+    font-size: var(--font-size-6);
+    line-height: 2rem;
+    padding-top: 1rem;
+
+    @media (min-width: 700px) {
+      line-height: 2.5rem;
+    }
+
+    a {
+      color: var(--header);
+      border-bottom: 1px solid var(--header);
+      transition: border-bottom 200ms ease-in-out;
+
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+  }
 }
