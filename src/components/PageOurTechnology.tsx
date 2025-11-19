@@ -33,7 +33,7 @@ light absorption in the mid-IR region of the optical spectrum."
           temperature, pressure and their gradients in both time and space
           during crystal formation seems to bear information about its identity,
           including its origin. In many aspects, it resembles genomics in living
-          cells, and we call it the gemstone genomics concept.
+          cells, and we call it the <strong>gemstone genomics</strong> concept.
         </p>
       </Paragraphs>
     </Main>
