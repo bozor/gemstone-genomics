@@ -1,27 +1,36 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, Space_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import { ViewTransitions } from "@/vendor/next-view-transitions";
+
+import Nav from "@/components/Nav";
 
 import "./globals.css";
+import "@/styles/reset.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
+  weight: "400",
   subsets: ["latin"],
 });
 
-const title = `${
-  process.env.NEXT_PUBLIC_VERCEL_ENV === "preview" ? `[Preview] - ` : ``
-}Gemstone Genomics`;
+const title = {
+  template: `${
+    process.env.NEXT_PUBLIC_VERCEL_ENV === "preview" ? `[Preview] - ` : ``
+  }Gemstone Genomics : %s`,
+  default: "Gemstone Genomics",
+};
 
 export const metadata: Metadata = {
   title: title,
-  description: "Gemstone Genomics",
+  description:
+    "Gemstone genomics is an innovative concept that reflects the unique attributes of natural crystals embedded in the crystallographic lattice during crystal growth.",
 };
 
 export default function RootLayout({
@@ -30,12 +39,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth">
+      <body className={`${manrope.variable} ${spaceMono.variable}`}>
         {process.env.NEXT_PUBLIC_VERCEL_ENV === "preview" && (
           <div className="preview">Preview</div>
         )}
-        {children}
+        <ViewTransitions>
+          <Nav />
+          {children}
+        </ViewTransitions>
         <SpeedInsights />
         <Analytics />
       </body>

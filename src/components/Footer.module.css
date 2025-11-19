@@ -1,0 +1,21 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  background: var(--foreground);
+  color: var(--footer-text);
+  padding: 1.5rem;
+
+  @media (min-width: 700px) {
+    padding: 1.5rem 3.5rem;
+  }
+
+  p {
+    opacity: 0.5;
+  }
+}
+
+.inner {
+  width: 100%;
+  max-width: 1300px;
+  align-self: center;
+}

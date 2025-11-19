@@ -1,0 +1,119 @@
+.wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1;
+  padding: 0 1.5rem;
+
+  @media (min-width: 700px) {
+    background: color-mix(in srgb, var(--background) 75%, transparent);
+    padding: 0 3.5rem;
+  }
+}
+
+.overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  content: "";
+  background: color-mix(in srgb, var(--foreground) 75%, transparent);
+  transition: 150ms ease-in-out opacity;
+  height: 100svh;
+  transform: translateX(100%);
+  z-index: 1;
+
+  @media (min-width: 700px) {
+    display: none;
+  }
+
+  &.linksVisible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.logo {
+  position: relative;
+  width: 42px;
+  height: 44px;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: opacity 200ms ease-in-out;
+
+  @media (min-width: 700px) {
+    width: 50px;
+    height: 55px;
+    margin: 1rem 0;
+  }
+
+  img {
+    height: 100%;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.links {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transform: translateX(100%);
+  transition: 150ms ease-in-out transform;
+  text-align: right;
+  background: var(--foreground);
+  padding: 80px 1.5rem 0 1.5rem;
+  z-index: 2;
+  max-width: 190px;
+
+  @media (min-width: 700px) {
+    position: relative;
+    flex-direction: row;
+    transform: none;
+    margin-right: 0;
+    background: transparent;
+    transition: none;
+    text-align: left;
+    padding: 0;
+    height: auto;
+    max-width: none;
+  }
+
+  &.visible {
+    transform: translateX(0);
+  }
+
+  a {
+    color: var(--mobile-nav-links);
+    transition: opacity 200ms ease-in-out;
+
+    @media (min-width: 700px) {
+      color: var(--nav-links);
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1300px;
+  align-self: center;
+}
