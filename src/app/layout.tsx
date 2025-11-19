@@ -29,7 +29,8 @@ const title = {
 
 export const metadata: Metadata = {
   title: title,
-  description: "Gemstone Genomics",
+  description:
+    "Gemstone genomics is an innovative concept that reflects the unique attributes of natural crystals embedded in the crystallographic lattice during crystal growth.",
 };
 
 export default function RootLayout({
