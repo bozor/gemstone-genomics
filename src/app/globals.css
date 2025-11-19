@@ -21,7 +21,8 @@
   --font-size-sm: clamp(0.5833rem, 0.4508rem + 0.5303vw, 0.875rem);
   --font-size-xs: clamp(0.5rem, 0.3864rem + 0.4545vw, 0.75rem);
 }
-c html {
+
+html {
   height: 100dvh;
 }
 
